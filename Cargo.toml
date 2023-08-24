@@ -1,0 +1,32 @@
+[package]
+name = "xlix_app"
+version = "0.1.0"
+authors = ["FssAy"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.4", features = [] }
+
+[dependencies]
+webview2-com = "0.19.1"
+windows = "0.39.0"
+serde_json = "1.0"
+
+[dependencies.tauri]
+version = "1.4"
+features = [
+    "shell-open",
+]
+
+[dependencies.serde]
+version = "1.0"
+features = [
+    "derive",
+]
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
